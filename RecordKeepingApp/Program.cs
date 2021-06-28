@@ -17,11 +17,23 @@ namespace RecordKeepingApp
             attendanceRegister1.AcceptInput("UNILAG/1004", true);
 
 
-            //Createinstance for the receptionist
+            //Create Visitor Register for the receptionist
             IRecordKeeper<DateTime, string> visitorRegister = new RecordKeeper<DateTime, string>();
 
             //Populate the attendance register
             visitorRegister.AcceptInput(DateTime.Now, "Tunde Badmus");
+            visitorRegister.AcceptInput(DateTime.Now, "Dele Giwa");
+            visitorRegister.AcceptInput(DateTime.Now, "Eze Chima");
+
+            //create phone inventory
+            IRecordKeeper<string, MobilePhone> phoneInventory = new RecordKeeper<string, MobilePhone>();
+
+            //Populate the Inventory
+            phoneInventory.AcceptInput("TEC17770", new MobilePhone());
+            phoneInventory.AcceptInput("TEC17771", new MobilePhone());
+            phoneInventory.AcceptInput("TEC17772", new MobilePhone());
+
+
         }
     }
 }
